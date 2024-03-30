@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Web Notepad</title>
+    <!-- 使用公用 CDN 库加载 marked.js -->
+    <script src="marked.js"></script>
+</head>
+<body>
+    <h1>Markdown Web Notepad</h1>
+    <textarea id="markdown" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="convertToHTML()">Convert to HTML</button>
+    <div id="htmlOutput"></div>
+
+    <script>
+        function convertToHTML() {
+            const markdownInput = document.getElementById('markdown').value;
+            const htmlOutput = marked(markdownInput);
+            document.getElementById('htmlOutput').innerHTML = '<h2>HTML Output:</h2>' + htmlOutput;
+        }
+    </script>
+</body>
+</html>

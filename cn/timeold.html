@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <title>Current Time</title>
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <style>
+    body {
+      background-image: url('background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .time {
+      font-size: 250px;
+      font-family: "微软雅黑";
+      text-align: center;
+      margin-top: 5%;
+      color: white;
+    }
+    .text {
+      font-size: 50px;
+      font-family: "微软雅黑";
+      text-align: center;
+      margin-top: 0%;
+      color: #bbbbbb;
+    }
+  </style>
+  <script>
+    setInterval(() => {
+      const date = new Date();
+      const time = date.toLocaleTimeString();
+      document.querySelector('.time').textContent = time;
+    }, 1000);
+  </script>
+</head>
+<body>
+  <div class="text"><p>当前时间：</p></div>
+  <div class="time"></div>
+</body>
+</html>
